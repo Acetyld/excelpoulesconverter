@@ -7,4 +7,7 @@ export default defineNuxtConfig({
   colorMode: {
     preference: 'dark',
   },
+  runtimeConfig: {
+    allowedIps: ['93.119.3.188', '185.88.64.178']
+  },
 })
