@@ -69,19 +69,25 @@ const processFile = async () => {
   <div>
     <UCard>
       <template #header>
-        <h2 class="text-2xl font-bold">Excel Poules Converter</h2>
+        <div class="flex items-center space-x-4">
+          <UIcon name="i-heroicons-document-arrow-up" class="text-3xl text-primary" />
+          <h2 class="text-2xl font-bold">Excel Poules Converter</h2>
+        </div>
       </template>
-      
-      <form @submit.prevent="processFile">
-        <UFormField label="Selecteer Excel-bestand" name="excelFile" class="mb-4">
-          <UInput type="file" @change="handleFileChange" accept=".xlsx,.xls" />
-        </UFormField>
-        
-        <UButton type="submit" :loading="isLoading" :disabled="!file">
-          Bestand verwerken
-        </UButton>
-      </form>
-      
+
+      <div class="space-y-4">
+        <p>Upload uw Excel-bestand met poule-gegevens om het te verwerken en de totalen te berekenen.</p>
+        <form @submit.prevent="processFile" class="space-y-6">
+          <UFormField label="Selecteer Excel-bestand" name="excelFile">
+            <UInput type="file" @change="handleFileChange" accept=".xlsx,.xls" size="lg" />
+          </UFormField>
+
+          <UButton type="submit" :loading="isLoading" :disabled="!file" size="lg" icon="i-heroicons-cog-6-tooth">
+            Bestand verwerken
+          </UButton>
+        </form>
+      </div>
+
     </UCard>
   </div>
 </template>
