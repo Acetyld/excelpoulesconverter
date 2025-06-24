@@ -71,7 +71,24 @@ const takeScreenshot = async () => {
     const canvas = await html2canvas(leaderboardContainer.value, {
       backgroundColor: '#0c143f',
       useCORS: true,
-      scale: 2 
+      scale: 2,
+      onclone: (clonedDoc) => {
+        // This ensures all styles are copied to the screenshot
+        Array.from(document.styleSheets).forEach((sheet) => {
+          try {
+            const style = clonedDoc.createElement('style');
+            style.appendChild(clonedDoc.createTextNode(Array.from(sheet.cssRules).map(rule => rule.cssText).join('\n')));
+            clonedDoc.head.appendChild(style);
+          } catch (e) {
+            if (sheet.href) {
+              const link = clonedDoc.createElement('link');
+              link.rel = 'stylesheet';
+              link.href = sheet.href;
+              clonedDoc.head.appendChild(link);
+            }
+          }
+        });
+      }
     })
     const image = canvas.toDataURL('image/png')
     const a = document.createElement('a')
