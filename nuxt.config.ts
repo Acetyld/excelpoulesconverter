@@ -10,4 +10,12 @@ export default defineNuxtConfig({
   runtimeConfig: {
     allowedIps: ['93.119.3.188', '185.88.64.178']
   },
+  nitro: {
+    serverAssets: [
+      {
+        baseName: 'node_modules/xlsx',
+        dir: './node_modules/xlsx'
+      }
+    ]
+  }
 })
