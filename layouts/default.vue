@@ -9,6 +9,7 @@
         <nav class="hidden sm:flex items-center space-x-4">
           <NuxtLink to="/" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-slate-800" active-class="text-primary-400">Start</NuxtLink>
           <NuxtLink to="/poules-converter" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-slate-800" active-class="text-primary-400">Poules Converter</NuxtLink>
+          <NuxtLink to="/poule-viewer" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-slate-800" active-class="text-primary-400">Poule Viewer</NuxtLink>
         </nav>
       </div>
     </header>
