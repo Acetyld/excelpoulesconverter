@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-slate-900 text-white min-h-screen font-sans">
-    <header class="border-b border-slate-700">
+  <div class="dark bg-slate-900 text-white min-h-screen font-sans">
+    <header class="bg-slate-800 border-b border-slate-700">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         <NuxtLink to="/" class="flex items-baseline gap-2">
           <h1 class="text-2xl font-bold">Debtt.</h1>
